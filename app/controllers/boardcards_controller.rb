@@ -1,0 +1,2 @@
+class BoardcardsController < ApplicationController
+end

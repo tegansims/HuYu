@@ -1,0 +1,2 @@
+module BoardcardsHelper
+end

@@ -1,0 +1,2 @@
+module BoardquestionsHelper
+end
