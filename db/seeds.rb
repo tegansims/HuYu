@@ -1,7 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Card.destroy_all
+
+Card.create(name: "Alex", hair_color: "black", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: 'moustache')
+Card.create(name: "Alfred", hair_color: "ginger", hair_type: "long", gender: "male", hat: false, glasses: false, eye_color: "blue", facial_hair: 'moustache')
+Card.create(name: "Anita", hair_color: "blonde", hair_type: "long", gender: "female", hat: false, glasses: false, eye_color: "blue", facial_hair: 'none')
+Card.create(name: "Anne", hair_color: "black", hair_type: "curly", gender: "female", hat: false, glasses: false, eye_color: "brown", facial_hair: 'none')
+Card.create(name: "Bernard", hair_color: "brunette", hair_type: "short", gender: "male", hat: true, glasses: false, eye_color: "brown", facial_hair: 'none')
+Card.create(name: "Bill", hair_color: "ginger", hair_type: "bald", gender: "male", hat: false, glasses: false, eye_color: "green", facial_hair: 'beard')
+Card.create(name: "Charles", hair_color: "blonde", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: 'moustache')
+Card.create(name: "Claire", hair_color: "ginger", hair_type: "short", gender: "female", hat: true, glasses: true, eye_color: "brown", facial_hair: 'none')
+
+Card.create(name: "Paul", hair_color: "white", hair_type: "short", gender: "male", hat: false, glasses: true, eye_color: "brown", facial_hair:"none")
+Card.create(name: "Peter", hair_color: "white", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "blue", facial_hair:"none")
+Card.create(name: "Philip", hair_color: "black", hair_type: "curly", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair:"beard")
+Card.create(name: "Richard", hair_color: "brown", hair_type: "bald", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair:"beard")
+Card.create(name: "Robert", hair_color: "brown", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "blue", facial_hair:"none")
+Card.create(name: "Sam", hair_color: "white", hair_type: "bald", gender: "male", hat: false, glasses: true, eye_color: "brown", facial_hair:"none")
+Card.create(name: "Susan", hair_color: "white", hair_type: "long", gender: "female", hat: false, glasses: false, eye_color: "brown", facial_hair:"none")
+Card.create(name: "Tom", hair_color: "black", hair_type: "bald", gender: "male", hat: false, glasses: true, eye_color: "blue", facial_hair:"none")
+
+Card.create(name: "David", hair_color: "blonde", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: "beard")
+Card.create(name: "Eric", hair_color: "blonde", hair_type: "short", gender: "male", hat: true, glasses: false, eye_color: "brown", facial_hair: "none")
+Card.create(name: "Frans", hair_color: "ginger", hair_type: "curly", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: "none")
+Card.create(name: "George", hair_color: "white", hair_type: "short", gender: "male", hat: true, glasses: false, eye_color: "brown", facial_hair: "none")
+Card.create(name: "Herman", hair_color: "ginger", hair_type: "bald", gender: "male", hat: false, glasses: false, eye_color: "green", facial_hair: "none")
+Card.create(name: "Joe", hair_color: "blonde", hair_type: "curly", gender: "male", hat: false, glasses: true, eye_color: "brown", facial_hair: "none")
+Card.create(name: "Maria", hair_color: "brown", hair_type: "long", gender: "female", hat: true, glasses: false, eye_color: "brown", facial_hair: "none")
+Card.create(name: "Max", hair_color: "black", hair_type: "curly", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: "moustache")

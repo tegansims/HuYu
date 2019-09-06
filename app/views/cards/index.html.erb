@@ -1,0 +1,11 @@
+<h1>All Character Cards</h1>
+
+    
+ <div class='container'>
+        <% @cards.each do |card| %>
+            <div class="card">
+                <span><%= card.name %></span>
+            </div>
+        <% end %>
+ </div>
+ 
