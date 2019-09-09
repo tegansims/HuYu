@@ -13,6 +13,11 @@
   <% if session[:user_id] %>
     <%= button_to "Logout", '/logout', method: :delete %>   
   <% end %>
+
+  <% if flash[:notice] %>
+    <h4><%= flash[:notice] %></h4>   
+  <% end %>
+
   <% if flash[:errors] %>
     <ul class='errors'>
         <% flash[:errors].each do |error| %>

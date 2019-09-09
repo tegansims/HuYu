@@ -12,6 +12,7 @@ class PlayersController < ApplicationController
         session[:player2_id] = @player2.id
         @player2.board = Board.new 
         @player2.board.cards << Card.all
+        @player2.board.questions << Question.all
         @player2.save
         session[:board2_id] = @player2.board.id
         redirect_to "/players/#{player1.id}/card_pick_form"

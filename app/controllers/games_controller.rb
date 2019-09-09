@@ -13,6 +13,7 @@ class GamesController < ApplicationController
         session[:player1_id] = @player1.id
         @player1.board = Board.new 
         @player1.board.cards << Card.all
+        @player1.board.questions << Question.all
         @player1.save
         session[:board1_id] = @player1.board.id
         if params[:game][:game_type] == '2 Players'

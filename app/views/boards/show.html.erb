@@ -1,0 +1,19 @@
+<%= render 'cards/display_cards' %>
+
+<div class="questions_container">
+    <%= form_tag board_path(@board), method: :patch do %>
+        <%= label_tag :attribute_type %>
+        <select name="question[attribute_type]" id="question_attribute_type">
+            <% @questions_attributes.each do |type| %>
+              <option value="<%= type %>"><%= type %></option>
+            <% end %>
+        </select>
+
+        <select name="question[attribute_value]" id="question_attribute_value">
+            <% @questions_values.each do |value| %>
+              <option value="<%= value %>"><%= value %></option>
+            <% end %>
+        </select>
+        <%= submit_tag "Submit Question" %>
+    <% end %>
+</div>
