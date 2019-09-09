@@ -1,0 +1,7 @@
+<%= form_for(@game) do |f| %>
+    <%= f.label :game_type %> <br>
+    <p>1 Player<%= f.radio_button :game_type, "1 Player" %></p>
+    <p>2 Players<%= f.radio_button :game_type, "2 Players" %></p>
+    <%= f.submit %>
+<% end %>
+  

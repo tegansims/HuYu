@@ -1,0 +1,8 @@
+<%= render 'cards/display_cards' %>
+
+<%= form_for @player, url: card_pick_path do |f| %>
+    <h4><%= @player.user.username %>: Choose your Character</h4>
+    <%= f.collection_select :card_picked, Card.all, :id, :name %>
+    <%= f.submit "Choose Character" %>
+<% end %>
+

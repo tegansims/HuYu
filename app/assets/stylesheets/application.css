@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ ul.errors {
+     background-color: pink;
+     color: red;
+ }
