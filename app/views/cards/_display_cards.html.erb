@@ -1,15 +1,7 @@
  <div class='container'>
         <% @cards.each do |card| %>
             <div class="card">
-                <span><%= card.name %></span><br>
-                <span>Hair Color: <%= card.hair_color %></span><br>
-                <span>Hair Type: <%= card.hair_type %></span><br>
-                <span>Glasses: <%= card.glasses %></span><br>
-                <span>Gender: <%= card.gender %></span><br>
-                <span>Hat: <%= card.hat %></span><br>
-                <span>Eye color: <%= card.eye_color %></span><br>
-                <span>Facial Hair: <%= card.facial_hair %></span><br>
-                
+                    <img src=<%= card.img_path %> alt="<%= card.name%>">               
             </div>
         <% end %>
  </div>

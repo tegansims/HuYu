@@ -17,3 +17,24 @@
      background-color: pink;
      color: red;
  }
+
+ nav img {
+     height: 80px;
+     margin: 0;
+ }
+
+ 
+ nav.no-pad {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+ }
+
+ #navbar img {
+     justify-self: flex-start;
+ }
+
+ #navbar a {
+     justify-self: flex-end;
+ }
+

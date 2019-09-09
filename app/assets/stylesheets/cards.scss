@@ -9,8 +9,19 @@ div.card {
     margin: 5px;
 }
 
+div.card img {
+    width: 150px;
+    height: 180px;
+}
+
 div.container {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    border: 3px dashed black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    background-image: radial-gradient(rgb(227, 62, 25) 5%, rgb(179, 179, 50) 15%, rgb(187, 46, 30) 60%);
 }

@@ -15,7 +15,7 @@ class BoardsController < ApplicationController
         get_matching_cards
         refactor_board
         
-        if @matching_cards.length == 1
+        if @question.attribute_value == @picked_card.name
             flash[:notice] = "#{@board.player.user.username} won the game!"
             redirect_to root_path
         elsif @board.player.id == player1.id
