@@ -37,15 +37,15 @@ class BoardsController < ApplicationController
                 @picked_card = Card.find(player1.card_picked)
                 @board = player2.board
                 if @board.cards.count <= 5
-                    @question = player2.board.questions.select{|q| q.attribute_type == "name"}.sample
+                    @question = player2.board.questions.sample
                 else
                     @question = player2.board.questions.select{|q| q.attribute_type != "name"}.sample
                 end
                 if @question.attribute_value == @picked_card.name
                     flash[:notice] = "#{@board.player.user.username} won the game!"
-                    redirect_to root_path
+                    redirect_to root_path and return
                 else
-                    get_matching_cards
+                    @matching_cards = @board.cards.where("#{@question[:attribute_type]} = '#{@question[:attribute_value]}'")
                     refactor_board
                 end
                 flash[:computer] = "The computer has asked, '#{@question.attribute_type}' = '#{@question.attribute_value}'? It only has #{@board.cards.count} cards left!"
@@ -83,14 +83,23 @@ class BoardsController < ApplicationController
     def refactor_board
         if @matching_cards.include?(@picked_card)
             @board.cards = @matching_cards
-            @board.questions -= @board.questions.select{|q| q.attribute_type == question_params[:attribute_type]}
+            # @board.questions -= @board.questions.select{|q| q.attribute_type == question_params[:attribute_type]}
         else
             @board.cards -= @matching_cards
-            @board.questions.delete(@question)
+            # @board.questions.delete(@question)
+        end
+        available_attribute_values = @board.cards.map{|card| card.get_attribute_values}.flatten
+        attributes_common_to_all = available_attribute_values.select{|attribute_value| available_attribute_values.count(attribute_value) == @board.cards.count}
+        if @board.cards.length == 1
+            @board.questions = []
+            @board.questions << Question.all.find_by(attribute_value: @board.cards.first.name)
+        else
+            attribute_values_left = (available_attribute_values - attributes_common_to_all).flatten
+            @board.questions = @board.questions.select{|question| attribute_values_left.any?(question.attribute_value)}
         end
         @board.save
     end
-
+    
     def question_attribute_types
         @questions_attributes = @questions.map{|q| q.attribute_type }.uniq
     end
