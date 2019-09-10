@@ -1,7 +1,11 @@
 Boardcard.destroy_all
+Boardquestion.destroy_all
 Board.destroy_all
 Card.destroy_all
 Question.destroy_all
+User.destroy_all
+Player.destroy_all
+Game.destroy_all
 
 
 Card.create(name: "Alex", hair_color: "black", hair_type: "short", gender: "male", hat: false, glasses: false, eye_color: "brown", facial_hair: 'moustache', img_path: "https://m0.joe.co.uk/wp-content/uploads/2018/08/09172422/Screen-Shot-2018-08-09-at-17.24.06.png")
@@ -95,3 +99,5 @@ Question.create(attribute_type: "eye_color", attribute_value: "green")
 #hat
 Question.create(attribute_type: "hat", attribute_value: true)
 Question.create(attribute_type: "hat", attribute_value: false)
+
+User.create(username: 'COMPUTER')
