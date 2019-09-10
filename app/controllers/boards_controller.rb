@@ -89,7 +89,7 @@ class BoardsController < ApplicationController
             @board.questions = []
             @board.questions << Question.all.find_by(attribute_value: @board.cards.first.name)
         else
-            attribute_values_left = (available_attribute_values - attributes_common_to_all).flatten
+            attribute_values_left = (available_attribute_values - attributes_common_to_all).uniq
             @board.questions = @board.questions.select{|question| attribute_values_left.any?(question.attribute_value)}
         end
         @board.save

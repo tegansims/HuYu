@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_115654) do
+ActiveRecord::Schema.define(version: 2019_09_10_152102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2019_09_10_115654) do
     t.string "hair_type"
     t.string "gender"
     t.string "hat"
-    t.boolean "glasses"
+    t.string "glasses"
     t.string "eye_color"
     t.string "facial_hair"
     t.datetime "created_at", precision: 6, null: false
