@@ -1,7 +1,7 @@
 class Player < ApplicationRecord
   belongs_to :user
   belongs_to :game
-  has_one :board
+  has_one :board 
   
   def username=(username)
     u = User.find_by(username: username)

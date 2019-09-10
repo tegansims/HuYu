@@ -11,7 +11,7 @@
 
   <body>
   <nav id='navbar' class="navbar navbar-expand-lg navbar-dark bg-primary no-pad">
-    <%= image_tag 'huyu_logo.png', alt: "Logo" %>
+    <a href="/"><%= image_tag 'huyu_logo.png', alt: "Logo" %></a>
     <div id='links-container'>
       <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
       <% if session[:user_id] %>
