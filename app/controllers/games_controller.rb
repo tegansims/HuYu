@@ -16,6 +16,7 @@ class GamesController < ApplicationController
         @player1.board.questions << Question.all
         @player1.save
         session[:board1_id] = @player1.board.id
+        
         if params[:game][:game_type] == '2 Players'
             redirect_to controller: 'players', action: :new
         else

@@ -9,6 +9,7 @@ class BoardsController < ApplicationController
     end
 
     def update
+        
         picked_card
         
         @question = Question.find_by(question_params)
@@ -16,6 +17,17 @@ class BoardsController < ApplicationController
         refactor_board
         
         if @question.attribute_value == @picked_card.name
+            # set Game winner_id to winner (@board.player.user_id)
+            # set Game loser_id to loser
+            
+            if @board.player.id == player1.id
+                Game.find(session[:game_id]).update(winner: player1.user_id)
+                Game.find(session[:game_id]).update(loser: player2.user_id)
+            else
+                Game.find(session[:game_id]).update(winner: player2.user_id)
+                Game.find(session[:game_id]).update(loser: player1.user_id)
+            end
+            
             flash[:notice] = "#{@board.player.user.username} won the game!"
             redirect_to root_path
         elsif @board.player.id == player1.id

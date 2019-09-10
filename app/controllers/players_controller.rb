@@ -4,6 +4,7 @@ class PlayersController < ApplicationController
     def new
         @player = Player.new
         @users = User.all.select{|u| u != current_user}
+
     end
 
     def create
