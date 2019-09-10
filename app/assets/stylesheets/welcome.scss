@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1 {
     font: 600 1.5em/1 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
     text-transform: uppercase;
-    letter-spacing: .5em;
-    top: 25%;
-    width: 100%;
-    margin: 20px;
+    width: 50%;
+    margin: 20px auto;
+    font-weight: 900;
+    color: #efedce;
+    letter-spacing: .1em;
+    padding: .2em 0 .25em 0;
+    font-size: 4em;
+    text-shadow: .04em .04em 0 #9cb8b3;
 }
