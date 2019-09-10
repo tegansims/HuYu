@@ -1,4 +1,4 @@
- <div class='container'>
+ <div id="<%= @player.id == session[:player1_id] %>" class='container'>
         <% @cards.each do |card| %>
             <div class="card">
                     <img src=<%= card.img_path %> alt="<%= card.name%>">               

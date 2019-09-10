@@ -14,7 +14,7 @@ div.card img {
     height: 180px;
 }
 
-div.container {
+div.container#true {
     margin: 20px auto;
     width: 70%;
     display: flex;
@@ -25,5 +25,19 @@ div.container {
     align-items: center;
     justify-content: center;
     background-color: red;
-    background-image: radial-gradient(rgb(227, 62, 25) 5%, rgb(179, 179, 50) 15%, rgb(187, 46, 30) 60%);
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/02/51/61/595782719800bcf.jpg");
+}
+
+div.container#false {
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border: 3px dashed black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    background-image: url("https://blueblots.com/wp-content/uploads/2010/02/16-Bandwidth-Blue-pattern.jpg");
 }

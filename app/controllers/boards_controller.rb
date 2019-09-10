@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
     def show
         @cards = @board.cards
         @questions = @board.questions
+        @player = @board.player
         question_attribute_types
         # @questions_values = @questions.map{|q| q.attribute_value }.uniq
         get_question_vals
