@@ -1,0 +1,22 @@
+<div class='analytics'>
+
+<br><br>
+ <table> <h4>Leaderboard</h4>
+  <tr>
+    <td> Username </td>
+    <td> Games Played </td>
+    <td> Games Won </td>
+    <td> Percentage Won </td>
+  </tr>
+  
+    <% User.winners.each do |user| %> 
+  <tr>
+    <td> <%= user.username %></td>
+    <td> <%= user.games_played.count %></td>
+    <td> <%= user.games_won %> </td>
+    <td> <%= user.percentage_won.round(2) %>% </td>
+  </tr>
+    <% end %>
+</table>
+
+</div>

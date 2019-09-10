@@ -6,36 +6,6 @@
 
 
 
- <%# Analytics Here! %>
-<br><br>
- <table> <h4>Top Winners</h4>
-  <tr>
-    <td> Username </td>
-    <td> Games Played </td>
-    <td> Games Won </td>
-  </tr>
-  
-    <% User.all.each do |user| %> 
-  <tr>
-    <td> <%= user.username %></td>
-    <td> <%= Game.all.select{|game| game.winner == user.id || game.loser == user.id}.count %></td>
-    <td> <%= Game.all.select{|game| game.winner == user.id}.count %> </td>
-  </tr>
-    <% end %>
-</table>
+<%= render 'users/analytics' %>
 
- <table> <h4>Top Losers</h4>
-  <tr>
-    <td> Username </td>
-    <td> Games Played </td>
-    <td> Games Lost </td>
-  </tr>
-  
-    <% User.all.each do |user| %> 
-  <tr>
-    <td> <%= user.username %></td>
-    <td> <%= Game.all.select{|game| game.winner == user.id || game.loser == user.id}.count %></td>
-    <td> <%= Game.all.select{|game| game.loser == user.id}.count %> </td>
-  </tr>
-    <% end %>
-</table>
+<%= render 'users/nemesis' %>
