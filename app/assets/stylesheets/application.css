@@ -31,10 +31,8 @@
  }
 
  #navbar img {
-     justify-self: flex-start;
- }
+    padding-right: 10px;
+}
 
- #navbar a {
-     justify-self: flex-end;
- }
+
 

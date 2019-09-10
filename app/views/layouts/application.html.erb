@@ -14,6 +14,7 @@
     <%= image_tag 'huyu_logo.png', alt: "Logo" %>
     <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
     <% if session[:user_id] %>
+      <%= link_to "Edit Profile", edit_user_path(current_user), class: "navbar-brand"%>   
       <%= link_to "Logout", '/logout', method: :delete, class: "navbar-brand"%>   
     <% end %>
     
