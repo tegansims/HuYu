@@ -10,4 +10,5 @@ class User < ApplicationRecord
     # def self.exclude_current_user
     #     all.select{|u| u != current_user }
     # end
+    
 end
