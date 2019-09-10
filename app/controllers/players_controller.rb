@@ -3,12 +3,12 @@ class PlayersController < ApplicationController
 
     def new
         @player = Player.new
-        @users = User.all.select{|u| u != current_user}
+        @users = User.all.select{|u| u != current_user && u.username != 'COMPUTER'}
 
     end
 
     def create
-        user = User.find(params[:player][:user_id])
+        user = User.find_by(username: params[:player][:username])
         @player2 = Player.create(user_id: user.id, game_id: session[:game_id])
         session[:player2_id] = @player2.id
         @player2.board = Board.new 

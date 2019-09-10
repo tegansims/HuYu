@@ -1,3 +1,19 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+label.choose-game-heading {
+    font: 600 1.5em/1 'Raleway', sans-serif;
+    text-transform: uppercase;
+    width: 50%;
+    margin: 20px auto;
+    font-weight: 900;
+    color: #efedce;
+    letter-spacing: .1em;
+    padding: .2em 0 .25em 0;
+    font-size: 4em;
+    text-shadow: .04em .04em 0 #9cb8b3;
+}
+
+p {
+    font-size: 1.5em;
+}

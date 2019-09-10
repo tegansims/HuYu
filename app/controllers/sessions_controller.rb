@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to root_path
         else
-            render :new
+            flash[:errors] = ["No user with this username exists!"]
+            redirect_to login_path
         end
     end
 

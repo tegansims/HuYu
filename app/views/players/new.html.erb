@@ -1,10 +1,17 @@
+<div class="select-user-form">
 <%= form_for(@player) do |f| %>
+    <%= f.label :user, class: 'choose-player-heading' %> <br>
+    <%= f.text_field :username, list: 'usernames', class: "form-control-plaintext"%> <br>
+    <datalist id="usernames">
+        <% @users.each do |user| %>
+            <option value="<%= user.username %>"></option>
+        <% end %>
+    </datalist>
 
-    <%= f.label :user %>
-    <%= f.collection_select :user_id, @users, :id, :username %>
-
-    <%= f.submit "Add Player" %>
+    <%= f.submit "Add Player", class: "btn btn-success" %>
 <% end %>
   
 
 <%= render 'users/nemesis' %>
+</div>
+  
