@@ -5,3 +5,15 @@
     text-align: center;
 }
 
+div.board-flex-container {
+    display: flex;
+}
+
+.flex-side {
+    flex-basis: 25%;
+}
+
+.flex-middle {
+    flex-basis: 50%;
+}
+
