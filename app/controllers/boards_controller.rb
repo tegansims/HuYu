@@ -5,6 +5,9 @@ class BoardsController < ApplicationController
         @cards = @board.cards
         @questions = @board.questions
         @player = @board.player
+        
+        @questions_asked = @board.player == player1 ? session[:questions_asked_1] : session[:questions_asked_2]
+        # byebug
         question_attribute_types
         # @questions_values = @questions.map{|q| q.attribute_value }.uniq
         get_question_vals
@@ -16,6 +19,7 @@ class BoardsController < ApplicationController
         @question = Question.find_by(question_params)
         get_matching_cards
         refactor_board
+        add_question_to_questions_asked
         
         if @question.attribute_value == @picked_card.name
             if @board.player.id == player1.id
@@ -141,6 +145,18 @@ class BoardsController < ApplicationController
         @questions_gender_values = question_genders
         @questions_hat_values = question_hats
         @questions_eye_color_values = question_eye_colors
+    end
+
+    def add_question_to_questions_asked
+        session[:questions_asked_1] ||= []
+        session[:questions_asked_2] ||= []
+        if @board.player == player1
+            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value}" : nil
+            session[:questions_asked_1] << last_question_asked if last_question_asked
+        else
+            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value}" : nil
+            session[:questions_asked_2] << last_question_asked if last_question_asked
+        end
     end
 
 end

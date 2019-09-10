@@ -5,3 +5,35 @@
     text-align: center;
 }
 
+div.board-flex-container {
+    display: flex;
+}
+
+.flex-side {
+    flex-basis: 25%;
+}
+
+.flex-middle {
+    flex-basis: 50%;
+}
+
+div.board-flex-container form h4 {
+    font-size: 3em;
+}
+
+div.questions-asked-container h4 {
+    font-size: 3em;
+}
+
+div.board-flex-container form label {
+    font-size: 1.5em;
+}
+
+div.board-flex-container form {
+    margin-top: 30%;
+}
+
+div.board-flex-container div.questions-asked-container {
+    margin-top: 5%;
+}
+
