@@ -19,7 +19,26 @@ class BoardsController < ApplicationController
             flash[:notice] = "#{@board.player.user.username} won the game!"
             redirect_to root_path
         elsif @board.player.id == player1.id
-            redirect_to player2.board
+            if player2.user.username == "COMPUTER"
+                @picked_card = Card.find(player1.card_picked)
+                @board = player2.board
+                if @board.cards.count <= 5
+                    @question = player2.board.questions.select{|q| q.attribute_type == "name"}.sample
+                else
+                    @question = player2.board.questions.select{|q| q.attribute_type != "name"}.sample
+                end
+                if @question.attribute_value == @picked_card.name
+                    flash[:notice] = "#{@board.player.user.username} won the game!"
+                    redirect_to root_path
+                else
+                    get_matching_cards
+                    refactor_board
+                end
+                flash[:computer] = "The computer has asked, '#{@question.attribute_type}' = '#{@question.attribute_value}'? It only has #{@board.cards.count} cards left!"
+                redirect_to player1.board
+            else
+                redirect_to player2.board
+            end
         else
             redirect_to player1.board
         end
