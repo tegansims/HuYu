@@ -19,6 +19,9 @@
     
   </nav>
   
+  <% if flash[:computer] %>
+    <p><%= flash[:computer] %></p>   
+  <% end %>
   
   <% if flash[:notice] %>
     <h4><%= flash[:notice] %></h4>   

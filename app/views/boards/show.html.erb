@@ -9,11 +9,33 @@
             <% end %>
         </select>
 
-        <select name="question[attribute_value]" id="question_attribute_value">
-            <% @questions_values.each do |value| %>
-              <option value="<%= value %>"><%= value %></option>
+        <select name="question[attribute_value]">
+            <% @questions_name_values.each do |value| %>
+              <option value="<%= value %>" class="question_names"><%= value %></option>
+            <% end %>
+            <% @questions_hair_type_values.each do |value| %>
+              <option value="<%= value %>" class="question_hair_types" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_hair_color_values.each do |value| %>
+              <option value="<%= value %>" class="question_hair_colors" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_glasses_values.each do |value| %>
+              <option value="<%= value %>" class="question_glasses" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_hat_values.each do |value| %>
+              <option value="<%= value %>" class="question_hats" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_gender_values.each do |value| %>
+              <option value="<%= value %>" class="question_genders" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_eye_color_values.each do |value| %>
+              <option value="<%= value %>" class="question_eye_colors" style="display:none;"><%= value %></option>
+            <% end %>
+            <% @questions_facial_hair_values.each do |value| %>
+              <option value="<%= value %>" class="question_facial_hairs" style="display:none;"><%= value %></option>
             <% end %>
         </select>
+
         <%= submit_tag "Submit Question" %>
     <% end %>
 </div>

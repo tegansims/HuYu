@@ -29,11 +29,9 @@ class PlayersController < ApplicationController
         player = Player.find(params[:id])
         player.card_picked = card_picked.id
         player.save
-        # byebug
         if !player2.card_picked
             redirect_to "/players/#{player2.id}/card_pick_form"
         else
-
             redirect_to board_path(player1.board)
         end
     end

@@ -20,7 +20,15 @@ class GamesController < ApplicationController
         if params[:game][:game_type] == '2 Players'
             redirect_to controller: 'players', action: :new
         else
-            # redirect somewhere for 1 player game
+            @player2 = Player.create(user_id: User.find_by(username: "COMPUTER").id, game_id: session[:game_id])
+            session[:player2_id] = @player2.id
+            @player2.board = Board.new 
+            @player2.board.cards << Card.all
+            @player2.board.questions << Question.all
+            @player2.card_picked = Card.all.sample.id
+            @player2.save
+            session[:board2_id] = @player2.board.id
+            redirect_to "/players/#{player1.id}/card_pick_form"
         end
     end
 
