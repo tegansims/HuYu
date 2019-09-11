@@ -40,7 +40,8 @@ class BoardsController < ApplicationController
                     @question = player2.board.questions.select{|q| q.attribute_type != "name"}.sample
                 end
                 if @question.attribute_value == @picked_card.name
-                    # flash[:notice] = "#{@board.player.user.username} won the game!"
+                    Game.find(session[:game_id]).update(winner: player2.user_id)
+                    Game.find(session[:game_id]).update(loser: player1.user_id)
                     redirect_to celebration_path and return
                 else
                     @matching_cards = @board.cards.where("#{@question[:attribute_type]} = '#{@question[:attribute_value]}'")
@@ -80,8 +81,10 @@ class BoardsController < ApplicationController
 
     def refactor_board
         if @matching_cards.include?(@picked_card)
+            session[:last_q_correct?] = true
             @board.cards = @matching_cards
         else
+            session[:last_q_correct?] = false
             @board.cards -= @matching_cards
         end
         available_attribute_values = @board.cards.map{|card| card.get_attribute_values}.flatten
@@ -147,10 +150,10 @@ class BoardsController < ApplicationController
         session[:questions_asked_1] ||= []
         session[:questions_asked_2] ||= []
         if @board.player == player1
-            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value}" : nil
+            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value} = #{session[:last_q_correct?] ? 'correct' : 'incorrect'}" : nil
             session[:questions_asked_1] << last_question_asked if last_question_asked
         else
-            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value}" : nil
+            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value} = #{session[:last_q_correct?] ? 'correct' : 'incorrect'}" : nil
             session[:questions_asked_2] << last_question_asked if last_question_asked
         end
     end
