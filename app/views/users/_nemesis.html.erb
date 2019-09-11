@@ -1,21 +1,22 @@
 <div class='nemesis'>
 
 <br><br>
- <table> <h4><%= current_user.username%>'s nemesis</h4>
-  <tr>
-    <td> Opponent </td>
-    <td> Games Played Against </td>
-    <td> Games Won Against </td>
-    <td> Percentage Won Against </td>
-  </tr>
+<h4><%= current_user.username%>'s nemesis</h4>
+ <table class="table table-hover table-dark">
+  <thead>
+    <th> Opponent </th>
+    <th> Games Played Against </th>
+    <th> Games Won Against </th>
+    <th> Percentage Won Against </th>
+  </thead>
   
     <% current_user.nemesis_ordered.each do |user| %> 
-  <tr>
+  <tbody>
     <td> <%= user.username %></td>
     <td> <%= current_user.games_played_against(user)%></td>
     <td> <%= current_user.games_won_against(user) %> </td>
     <td> <%= current_user.percentage_won_against(user) %>% </td>
-  </tr>
+  </tbody>
     <% end %>
 </table>
 
