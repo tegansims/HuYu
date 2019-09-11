@@ -8,6 +8,7 @@ Player.destroy_all
 Game.destroy_all
 
 
+# Card.create(img_path: "https://opengameart.org/sites/default/files/card%20back%20black.png")
 Card.create(name: "Alex", hair_color: "black", hair_type: "short", gender: "male", hat: "no", glasses: "false", eye_color: "brown", facial_hair: 'moustache', img_path: "https://m0.joe.co.uk/wp-content/uploads/2018/08/09172422/Screen-Shot-2018-08-09-at-17.24.06.png")
 Card.create(name: "Alfred", hair_color: "ginger", hair_type: "long", gender: "male", hat: "no", glasses: "false", eye_color: "blue", facial_hair: 'moustache', img_path: "https://m0.joe.co.uk/wp-content/uploads/2018/08/09130431/Screen-Shot-2018-08-09-at-13.04.13.png")
 Card.create(name: "Anita", hair_color: "blonde", hair_type: "long", gender: "female", hat: "no", glasses: "false", eye_color: "blue", facial_hair: 'none', img_path: "https://m0.joe.co.uk/wp-content/uploads/2018/08/09105735/Screen-Shot-2018-08-09-at-10.57.12.png")

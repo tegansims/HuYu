@@ -2,16 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 div.card {
-    width: 131px;
-    height: 153px;
+    max-width: 131px;
+    max-height: 153px;
+
+    
     border: 3px solid rgb(55, 47, 47);
     border-radius: 5px;
     margin: 5px;
 }
 
 div.card img {
-    width: 125px;
-    height: 147px;
+    max-width: 125px;
+    max-height: 147px;
+    min-width: 110px;
+    min-height: 125px;
 }
 
 div.container#true {
@@ -20,7 +24,11 @@ div.container#true {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    border: 3px dashed black;
+    border: 5px solid #111;
+    box-shadow: 20px 20px 7px #999999;
+    border-bottom-right-radius: 15px;
+    border-radius:25px;
+    padding: 15px 25px;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
@@ -34,7 +42,11 @@ div.container#false {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    border: 3px dashed black;
+    border: 3px solid #111;
+    box-shadow: 20px 20px 7px #999999;
+    border-bottom-right-radius: 15px;
+    border-radius:25px;
+    padding: 15px 25px;
     border-radius: 5px;
     align-items: center;
     justify-content: center;

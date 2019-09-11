@@ -2,9 +2,9 @@
 
 <div>
     <% if User.find(@game.winner).username == 'COMPUTER' %>
-        <img src="https://media.giphy.com/media/l3vQY9AQCSP3WtLBS/giphy.gif" width="480" height="270" ><br>
+        <img src=<%= @comp_win_gifs.sample %> width="480" height="270" ><br>
     <% else %>
-        <img src="https://media.giphy.com/media/XwcUys5UMuwlq/giphy.gif" width="480" height="270" ><br>
+        <img src=<%= @user_win_gifs.sample %> width="480" height="270" ><br>
     <% end %>
     <br><%= link_to 'OK', root_path, class:'btn btn-success' %>
 </div>
