@@ -156,10 +156,10 @@ class BoardsController < ApplicationController
         session[:questions_asked_1] ||= []
         session[:questions_asked_2] ||= []
         if @board.player == player1
-            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value} = #{session[:last_q_correct?] ? 'correct' : 'incorrect'}" : nil
+            last_question_asked = @question ? "#{session[:last_q_correct?] ? 'CORRECT' : 'INCORRECT'}! You asked:\nCategory - #{@question.attribute_type}, Value - #{@question.attribute_value}" : nil
             session[:questions_asked_1] << last_question_asked if last_question_asked
         else
-            last_question_asked = @question ? "Type: #{@question.attribute_type}, Value: #{@question.attribute_value} = #{session[:last_q_correct?] ? 'correct' : 'incorrect'}" : nil
+            last_question_asked = @question ? "#{session[:last_q_correct?] ? 'CORRECT' : 'INCORRECT'}! You asked:\nCategory - #{@question.attribute_type}, Value - #{@question.attribute_value}" : nil
             session[:questions_asked_2] << last_question_asked if last_question_asked
         end
     end
