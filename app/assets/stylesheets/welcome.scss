@@ -21,3 +21,31 @@ h1 {
 .nemesis {
     width: 75%;
 }
+
+.table-wrapper {
+    max-height: 100px;
+    overflow: auto;
+    display: inline-block;
+  }
+
+.analytics {
+    overflow-y: auto;
+    height: 240px;
+}
+.analytics thead th {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    border-color: black;
+}
+
+.nemesis {
+    overflow-y: auto;
+    height: 240px;
+}
+.nemesis thead th {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    border-color: black;
+}
