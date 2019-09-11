@@ -103,3 +103,26 @@ header > a:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.analytics {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.nemesis {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container .flex-form {
+    margin: auto;
+    flex-basis: 25%;
+}
+
+.flex-board {
+    flex-basis: 75%;
+}

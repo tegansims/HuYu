@@ -61,8 +61,17 @@ class User < ApplicationRecord
         Player.all.select{|player| player.user_id == self.id && player.card_picked != nil}
     end
 
-    def most_picked_card  #incorrect
-        player_picked_cards.max_by {|card| player_picked_cards.count(card)}
+    def player_picked_cards_ids
+        player_picked_cards.map{|player| player.card_picked}
+    end 
+
+    def most_picked_card 
+        player_picked_cards_ids.max_by {|id| player_picked_cards_ids.count(id)}
     end
-   
+
+    def most_picked_card_name
+        Card.find(self.most_picked_card).name
+    end
+    
 end
+
