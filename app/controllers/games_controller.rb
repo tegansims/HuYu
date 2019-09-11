@@ -34,7 +34,7 @@ class GamesController < ApplicationController
     def celebration
         @game = Game.find(session[:game_id])
         @comp_win_gifs = ["https://images.says.com/uploads/story_source/source_image/417703/fbf1.gif", "https://media.giphy.com/media/l3vQY9AQCSP3WtLBS/giphy.gif"]
-        @user_win_gifs = ["https://media.giphy.com/media/mp1JYId8n0t3y/giphy.gif", "https://media.giphy.com/media/Is1O1TWV0LEJi/giphy.gif", "https://media.giphy.com/media/XwcUys5UMuwlq/giphy.gif","https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif", "https://media.giphy.com/media/l3q2Z6S6n38zjPswo/giphy.gif","https://media.giphy.com/media/nXxOjZrbnbRxS/giphy.gif","https://media.giphy.com/media/xNBcChLQt7s9a/giphy.gif"]
+        @user_win_gifs = ["https://media.giphy.com/media/mp1JYId8n0t3y/giphy.gif", "https://media.giphy.com/media/Is1O1TWV0LEJi/giphy.gif", "https://media.giphy.com/media/XwcUys5UMuwlq/giphy.gif","https://media.giphy.com/media/a0h7sAqON67nO/giphy.gif", "https://media.giphy.com/media/l3q2Z6S6n38zjPswo/giphy.gif","https://media.giphy.com/media/nXxOjZrbnbRxS/giphy.gif","https://media.giphy.com/media/xNBcChLQt7s9a/giphy.gif", "https://media.giphy.com/media/3o7TKtsBMu4xzIV808/giphy.gif"]
     end
 
     private
