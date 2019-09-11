@@ -57,6 +57,11 @@ class User < ApplicationRecord
         end
     end
 
+    def played_games?
+        played = Player.all.select{|player| player.card_picked != nil}
+        played.map{|player| player.user_id}.include?(self.id)
+    end    
+
     def player_picked_cards
         Player.all.select{|player| player.user_id == self.id && player.card_picked != nil}
     end
@@ -70,7 +75,11 @@ class User < ApplicationRecord
     end
 
     def most_picked_card_name
-        Card.find(self.most_picked_card).name
+        if played_games?
+            Card.find(self.most_picked_card).name
+        else
+            "No card"
+        end
     end
     
 end

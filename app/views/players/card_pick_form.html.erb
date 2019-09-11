@@ -3,7 +3,7 @@
     <div class="flex-form">
     <%= form_for @player, url: card_pick_path do |f| %>
         <% if @player.game.game_type == "2 Players" %>
-            <h4><%= @player.id == player1.id ? player1.user.first_name.capitalize : player2.user.first_name.capitalize %>: Look Away</h4>
+            <h4><%= @player.id != player1.id ? player1.user.first_name.capitalize : player2.user.first_name.capitalize %>: Look Away</h4>
         <% end %>
         <h4><%= @player.user.first_name.capitalize %>: Choose your Character</h4>
         <%= render 'cards/most_picked_cards' %>
