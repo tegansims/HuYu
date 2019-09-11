@@ -15,7 +15,7 @@
             </select> <br>
 
             <%= label_tag :value %> <br>
-            <select name="question[attribute_value]">
+            <select name="question[attribute_value]" id="question_attribute_value">
                 <option selected></option>
                 <% @questions_name_values.each do |value| %>
                   <option value="<%= value %>" class="question_names"><%= value %></option>

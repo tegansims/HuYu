@@ -8,7 +8,7 @@
         <h4><%= @player.user.first_name.capitalize %>: Choose your Character</h4>
         <%= render 'cards/most_picked_cards' %>
         <%= f.collection_select :card_picked, Card.all, :id, :name %>
-        <%= f.submit "Choose Character", class: "btn-success btn" %>
+        <%= f.submit "Choose", class: "btn-success btn" %>
     <% end %>
     </div>
 
