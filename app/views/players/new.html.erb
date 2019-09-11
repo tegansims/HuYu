@@ -1,6 +1,6 @@
 <div class="select-user-form">
 <%= form_for(@player) do |f| %>
-    <%= f.label :user, class: 'choose-player-heading' %> <br>
+    <%= label_tag :user, "Choose Your Opponent", class: 'choose-player-heading' %> <br>
     <%= f.text_field :username, list: 'usernames', class: "form-control-plaintext"%> <br>
     <datalist id="usernames">
         <% @users.each do |user| %>
