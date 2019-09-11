@@ -16,6 +16,7 @@
  body { 
      background-color: #8d9a97;
      color: white;
+     padding-top: 90px;
 }
 
 .navbar-brand {
@@ -46,12 +47,17 @@ header {
     background-color: #111111;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 header h2 {
     font-family: 'Saira Stencil One', cursive;
     margin-top: 20px;
     margin-left: 20px;
+
 }
 
 
