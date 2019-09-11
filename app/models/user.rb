@@ -57,8 +57,12 @@ class User < ApplicationRecord
         end
     end
 
-    # def self.exclude_current_user
-    #     all.select{|u| u != current_user }
-    # end
-    
+    def player_picked_cards
+        Player.all.select{|player| player.user_id == self.id && player.card_picked != nil}
+    end
+
+    def most_picked_card  #incorrect
+        player_picked_cards.max_by {|card| player_picked_cards.count(card)}
+    end
+   
 end
