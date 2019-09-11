@@ -31,6 +31,10 @@ class GamesController < ApplicationController
         end
     end
 
+    def celebration
+        @game = Game.find(session[:game_id])
+    end
+
     private
 
     def game_params

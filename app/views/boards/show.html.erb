@@ -11,10 +11,12 @@
                 <% @questions_attributes.each do |type| %>
                   <option value="<%= type %>"><%= type %></option>
                 <% end %>
+                <option selected></option>
             </select> <br>
 
             <%= label_tag :value %> <br>
             <select name="question[attribute_value]">
+                <option selected></option>
                 <% @questions_name_values.each do |value| %>
                   <option value="<%= value %>" class="question_names"><%= value %></option>
                 <% end %>

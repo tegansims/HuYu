@@ -7,9 +7,7 @@ class BoardsController < ApplicationController
         @player = @board.player
         
         @questions_asked = @board.player == player1 ? session[:questions_asked_1] : session[:questions_asked_2]
-        # byebug
         question_attribute_types
-        # @questions_values = @questions.map{|q| q.attribute_value }.uniq
         get_question_vals
     end
 
@@ -29,8 +27,8 @@ class BoardsController < ApplicationController
                 Game.find(session[:game_id]).update(winner: player2.user_id)
                 Game.find(session[:game_id]).update(loser: player1.user_id)
             end
-            flash[:notice] = "#{@board.player.user.username} won the game!"
-            redirect_to root_path
+            # flash[:notice] = "#{@board.player.user.username} won the game!"
+            redirect_to celebration_path
         
         elsif @board.player.id == player1.id
             if player2.user.username == "COMPUTER"
@@ -42,8 +40,8 @@ class BoardsController < ApplicationController
                     @question = player2.board.questions.select{|q| q.attribute_type != "name"}.sample
                 end
                 if @question.attribute_value == @picked_card.name
-                    flash[:notice] = "#{@board.player.user.username} won the game!"
-                    redirect_to root_path and return
+                    # flash[:notice] = "#{@board.player.user.username} won the game!"
+                    redirect_to celebration_path and return
                 else
                     @matching_cards = @board.cards.where("#{@question[:attribute_type]} = '#{@question[:attribute_value]}'")
                     refactor_board
@@ -83,10 +81,8 @@ class BoardsController < ApplicationController
     def refactor_board
         if @matching_cards.include?(@picked_card)
             @board.cards = @matching_cards
-            # @board.questions -= @board.questions.select{|q| q.attribute_type == question_params[:attribute_type]}
         else
             @board.cards -= @matching_cards
-            # @board.questions.delete(@question)
         end
         available_attribute_values = @board.cards.map{|card| card.get_attribute_values}.flatten
         attributes_common_to_all = available_attribute_values.select{|attribute_value| available_attribute_values.count(attribute_value) == @board.cards.count}

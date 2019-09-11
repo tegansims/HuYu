@@ -100,4 +100,4 @@ Question.create(attribute_type: "eye_color", attribute_value: "green")
 Question.create(attribute_type: "hat", attribute_value: "yes")
 Question.create(attribute_type: "hat", attribute_value: "no")
 
-User.create(first_name: "COMPUTER" ,last_name: "COMPUTER", username: 'COMPUTER')
+User.create(first_name: "COMPUTER" ,last_name: "COMPUTER", username: 'COMPUTER', password: "very_secure_password", password_confirmation: "very_secure_password")
