@@ -15,6 +15,12 @@ class BoardsController < ApplicationController
         picked_card
         
         @question = Question.find_by(question_params)
+
+        if !@question
+            flash[:errors] = ["Please, pick a valid question"]
+            redirect_to board_path(params[:id]) and return
+        end
+
         get_matching_cards
         refactor_board
         add_question_to_questions_asked
