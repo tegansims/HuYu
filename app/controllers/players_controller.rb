@@ -13,6 +13,9 @@ class PlayersController < ApplicationController
             if user.username == "COMPUTER"
                 flash[:errors] = ["If you want to play against the computer, select 1 Player game."]
                 redirect_to new_game_path
+            elsif user == current_user
+                flash[:errors] = ["Choose a user other than yourself to play against"]
+                redirect_to new_player_path
             else
                 @player2 = Player.create(user_id: user.id, game_id: session[:game_id])
                 session[:player2_id] = @player2.id

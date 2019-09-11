@@ -1,6 +1,6 @@
 <h1><%= User.find(@game.winner).username %> won the game! </h1>
 
-<div>
+<div class="celebration-container">
     <% if User.find(@game.winner).username == 'COMPUTER' %>
         <img src=<%= @comp_win_gifs.sample %> width="480" height="270" ><br>
     <% else %>
