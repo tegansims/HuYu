@@ -15,6 +15,12 @@ class BoardsController < ApplicationController
         picked_card
         
         @question = Question.find_by(question_params)
+
+        if !@question
+            flash[:errors] = ["Please, pick a valid question"]
+            redirect_to board_path(params[:id]) and return
+        end
+
         get_matching_cards
         refactor_board
         add_question_to_questions_asked
@@ -40,7 +46,8 @@ class BoardsController < ApplicationController
                     @question = player2.board.questions.select{|q| q.attribute_type != "name"}.sample
                 end
                 if @question.attribute_value == @picked_card.name
-                    # flash[:notice] = "#{@board.player.user.username} won the game!"
+                    Game.find(session[:game_id]).update(winner: player2.user_id)
+                    Game.find(session[:game_id]).update(loser: player1.user_id)
                     redirect_to celebration_path and return
                 else
                     @matching_cards = @board.cards.where("#{@question[:attribute_type]} = '#{@question[:attribute_value]}'")
