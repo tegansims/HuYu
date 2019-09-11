@@ -57,9 +57,12 @@ header h2 {
     font-family: 'Saira Stencil One', cursive;
     margin-top: 20px;
     margin-left: 20px;
-
+    color: white;
 }
 
+header > a:hover {
+    text-decoration: none;
+}
 
 
 .dropbtn {
