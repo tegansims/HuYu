@@ -12,14 +12,23 @@
 
   <body>
   <header>
-  <h2 id="huyu-name-logo">HuYu</h2>
+  <a href="/"><h2 id="huyu-name-logo">HuYu</h2></a>
   <nav id='navbar' class="no-pad">
     <div id='links-container'>
-      <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
-      <% if session[:user_id] %>
-        <%= link_to "Edit Profile", edit_user_path(current_user), class: "navbar-brand"%>   
-        <%= link_to "Logout", '/logout', method: :delete, class: "navbar-brand"%>   
-      <% end %>
+
+      <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          
+            <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
+            <% if session[:user_id] %>
+              <%= link_to "Edit Profile", edit_user_path(current_user), class: "navbar-brand"%>   
+              <%= link_to "Logout", '/logout', method: :delete, class: "navbar-brand"%>   
+            <% end %>
+        </div>
+      </div>
+
+
     <a href="/"><%= image_tag 'huyu_logo.png', alt: "Logo" %></a>
     </div>
   </nav>
