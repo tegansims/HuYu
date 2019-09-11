@@ -15,4 +15,18 @@ class Card < ApplicationRecord
         array
     end
 
+
+    def cards_picked
+        Player.all.select{|player| player.card_picked == self.id}
+    end
+
+    def times_card_picked
+        self.cards_picked.count
+    end
+    
+    def self.most_picked_card
+        Card.all.max_by { |card| card.times_card_picked} 
+    end
+
+    
 end
