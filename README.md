@@ -1,24 +1,26 @@
-# README
+# HuYu
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+HuYu is an online version of Guess Who, with an option of playing with either the original cartoon cards or celebrity lookalikes.
 
-Things you may want to cover:
+Make an account, and choose between playing against a friend or against the computer.
 
-* Ruby version
+Check out the leaderboard to track your progress!
 
-* System dependencies
+<br>
+Built with Ruby on Rails, JavaScript/JQuery and Bootswatch, by
 
-* Configuration
+* Oli Burt https://github.com/oliburt
+* Joaquin Gomez Cabido https://github.com/JoaquinGomezCabido
+* Tegan Sims https://github.com/tegansims
 
-* Database creation
+Two player mode:
 
-* Database initialization
+![Two-player mode](https://media.giphy.com/media/l4oxVwGXhhnpLUKqe7/giphy.gif)
 
-* How to run the test suite
+Cartoon-Celebrity card switch:
 
-* Services (job queues, cache servers, search engines, etc.)
+![Cartoon-Celebrity card switch](https://media.giphy.com/media/KDcF37UjicXtd30PZS/giphy.gif)
 
-* Deployment instructions
+Winning:
 
-* ...
+![Winning](https://media.giphy.com/media/kIRAQn7EbcVsrhxJGJ/giphy.gif)
