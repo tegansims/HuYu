@@ -18,7 +18,7 @@ require("jquery")
 // const imagePath = (name) => images(name, true)
 
 $(document).ready(function() {
-    console.log($('select#question_attribute_type'))
+
     $('select#question_attribute_type').on('change', function() {
         var type = $('select#question_attribute_type option:selected').val();
         if (type == 'name') {

@@ -126,3 +126,11 @@ header > a:hover {
 .flex-board {
     flex-basis: 75%;
 }
+
+.comp-message {
+    color: white;
+    background-image: url("https://blueblots.com/wp-content/uploads/2010/02/16-Bandwidth-Blue-pattern.jpg");
+    width: 75%;
+    border: 3px solid black;
+    margin: 0 auto;
+}
