@@ -1,6 +1,8 @@
+
 <div class="flex-container">
 
     <div class="flex-form">
+    
     <%= form_for @player, url: card_pick_path do |f| %>
         <% if @player.game.game_type == "2 Players" %>
             <h4><%= @player.id != player1.id ? player1.user.first_name.capitalize : player2.user.first_name.capitalize %>: Look Away</h4>
@@ -17,6 +19,13 @@
     </div>
 
     <div class="flex-board">
+    <br><br>
+    <span class="switch-label">Original</span>
+  <label class="switch">
+    <input type="checkbox" class="celeb-toggle" name="celeb-toggle">
+    <span class="slider round"></span>
+  </label>
+  <span class="switch-label">Celebrities</span>
         <%= render 'cards/display_cards' %>
     </div>
 </div>

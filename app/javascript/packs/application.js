@@ -102,4 +102,21 @@ $(document).ready(function() {
             $('.question_genders').show();
         }
     });
+
+    $('input.celeb-toggle').on('change', function() {
+        var is_checked = $('input.celeb-toggle').prop('checked');
+        var cartoon_cards = $('div.card img.cartoon')
+        
+        console.log(cartoon_cards[1])
+
+        if (is_checked) {
+            for (let i = 0; i < cartoon_cards.length; i++) {
+                cartoon_cards[i].className += " hide";
+            }
+        } else if (!is_checked) {
+            for (let i = 0; i < cartoon_cards.length; i++) {
+                cartoon_cards[i].className = "cartoon";
+            }
+        }
+    });
 });
