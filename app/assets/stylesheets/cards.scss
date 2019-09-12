@@ -4,19 +4,37 @@
 div.card {
     max-width: 131px;
     max-height: 153px;
-
-    
     border: 3px solid rgb(55, 47, 47);
     border-radius: 5px;
     margin: 5px;
 }
 
+div.card img.cartoon {
+  position: absolute;
+  z-index: 2;
+}
+
+div.card img.celeb {
+  position: absolute;
+}
+
+div.card img.cartoon:active {
+  visibility: hidden;
+}
+
 div.card img {
-    max-width: 125px;
-    max-height: 147px;
+    width: 125px;
+    height: 147px;
     min-width: 110px;
     min-height: 125px;
 }
+
+.card {
+  width: 131px;
+  height: 195px;
+  margin: 50px;
+}
+
 
 div.container#true {
     margin: 20px auto;

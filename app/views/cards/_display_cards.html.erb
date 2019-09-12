@@ -1,8 +1,9 @@
+ <br>
  <div id="<%= @player.id == session[:player1_id] %>" class='container flex-middle'>
         <% @cards.each do |card| %>
             <div class="card">
-                    <img src=<%= card.img_path %> alt="<%= card.name%>">               
+                    <img src=<%= card.celeb_path %> alt="<%= card.name%>" class="celeb">
+                    <img src=<%= card.img_path %> alt="<%= card.name%>" class="cartoon">
             </div>
         <% end %>
  </div>
- 
