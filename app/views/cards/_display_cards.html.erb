@@ -1,7 +1,13 @@
+ <br>
+ Cartoons<label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>Celebrities
+
  <div id="<%= @player.id == session[:player1_id] %>" class='container flex-middle'>
         <% @cards.each do |card| %>
             <div class="card">
-                    <img src=<%= card.img_path %> alt="<%= card.name%>">               
+                    <img src=<%= card.img_path %> alt="<%= card.name%>">
             </div>
         <% end %>
  </div>
