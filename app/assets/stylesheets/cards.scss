@@ -4,19 +4,37 @@
 div.card {
     max-width: 131px;
     max-height: 153px;
-
-    
     border: 3px solid rgb(55, 47, 47);
     border-radius: 5px;
     margin: 5px;
 }
 
+div.card img.cartoon {
+  position: absolute;
+  z-index: 2;
+}
+
+div.card img.celeb {
+  position: absolute;
+}
+
+div.card img.cartoon:active {
+  visibility: hidden;
+}
+
 div.card img {
-    max-width: 125px;
-    max-height: 147px;
+    width: 125px;
+    height: 147px;
     min-width: 110px;
     min-height: 125px;
 }
+
+.card {
+  width: 131px;
+  height: 195px;
+  margin: 50px;
+}
+
 
 div.container#true {
     margin: 20px auto;
@@ -53,69 +71,3 @@ div.container#false {
     background-color: blue;
     background-image: url("https://blueblots.com/wp-content/uploads/2010/02/16-Bandwidth-Blue-pattern.jpg");
 }
-
-
-
-
-/* The switch - the box around the slider */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  /* The slider */
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: green;
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px green;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
