@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/players/:id/card_pick_form', to: 'players#card_pick_form', as: :card_pick
   patch '/players/:id/card_pick_form', to: 'players#card_pick_save'
 
-  
+  get '/celebration', to: 'games#celebration'
 
   resources :cards, only: [:index]
   resources :boards, only: [:show, :update]

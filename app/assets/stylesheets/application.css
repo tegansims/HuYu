@@ -13,9 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ body { 
+     background-color: #b2b8b7;
+     color: white;
+     padding-top: 77px;
+}
+
+.navbar-brand {
+    margin-right: 0rem;
+}
+
  ul.errors {
-     background-color: pink;
-     color: red;
+     list-style: none;
  }
 
  nav img {
@@ -31,10 +40,97 @@
  }
 
  #navbar img {
-     justify-self: flex-start;
- }
+    padding-left: 10px;
+}
 
- #navbar a {
-     justify-self: flex-end;
- }
+header {
+    background-color: #111111;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
+header h2 {
+    font-family: 'Saira Stencil One', cursive;
+    margin-top: 20px;
+    margin-left: 20px;
+    color: white;
+}
+
+header > a:hover {
+    text-decoration: none;
+}
+
+
+.dropbtn {
+    background-color: #111111;
+    color: white;
+    padding-top: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Saira Stencil One', cursive;
+    font-weight: 300;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: none;
+    min-width: 160px;
+    background-color: #393737;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #a09595;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.analytics {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.nemesis {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container .flex-form {
+    margin: auto;
+    flex-basis: 25%;
+}
+
+.flex-board {
+    flex-basis: 75%;
+}
+
+.comp-message {
+    color: white;
+    background-image: url("https://blueblots.com/wp-content/uploads/2010/02/16-Bandwidth-Blue-pattern.jpg");
+    width: 75%;
+    border: 3px solid black;
+    margin: 0 auto;
+}

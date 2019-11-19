@@ -1,8 +1,32 @@
-<%= render 'cards/display_cards' %>
 
-<%= form_for @player, url: card_pick_path do |f| %>
-    <h4><%= @player.user.username %>: Choose your Character</h4>
-    <%= f.collection_select :card_picked, Card.all, :id, :name %>
-    <%= f.submit "Choose Character" %>
-<% end %>
+<div class="flex-container">
+
+    <div class="flex-form">
+    
+    <%= form_for @player, url: card_pick_path do |f| %>
+        <% if @player.game.game_type == "2 Players" %>
+            <h4><%= @player.id != player1.id ? player1.user.first_name.capitalize : player2.user.first_name.capitalize %>: Look Away</h4>
+        <% end %>
+        <h4><%= @player.user.first_name.capitalize %>: Choose your Character</h4>
+        <%= render 'cards/most_picked_cards' %>
+        <%= f.collection_select :card_picked, Card.all, :id, :name %>
+        <%= f.submit "Choose", class: "btn-success btn" %>
+    <% end %>
+    <%= form_for @player, url: card_pick_path do |f| %>
+        <%= f.hidden_field :card_picked, value: Card.all.sample.id%>
+        <%= f.submit "Random", class: "btn-danger btn" %>
+    <% end %>
+    </div>
+
+    <div class="flex-board">
+    <br><br>
+    <span class="switch-label">Original</span>
+  <label class="switch">
+    <input type="checkbox" class="celeb-toggle" name="celeb-toggle">
+    <span class="slider round"></span>
+  </label>
+  <span class="switch-label">Celebrities</span>
+        <%= render 'cards/display_cards' %>
+    </div>
+</div>
 

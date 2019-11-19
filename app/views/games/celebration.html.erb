@@ -1,0 +1,11 @@
+<h1><%= User.find(@game.winner).username %> won the game! </h1>
+
+<div class="celebration-container">
+    <% if User.find(@game.winner).username == 'COMPUTER' %>
+        <img src=<%= @comp_win_gifs.sample %> width="480" height="270" ><br>
+    <% else %>
+        <img src=<%= @user_win_gifs.sample %> width="480" height="270" ><br>
+    <% end %>
+    <br><%= link_to 'OK', root_path, class:'btn btn-success' %>
+</div>
+<h1>and <%= User.find(@game.loser).username %> is the loser! </h1>

@@ -1,19 +1,66 @@
-<%= render 'cards/display_cards' %>
+<div class="main-board-container">
+  <h1><%= @board.player.user.first_name.capitalize %>'s Turn</h1>
+  <span class="switch-label">Original</span>
+  <label class="switch">
+    <input type="checkbox" class="celeb-toggle" name="celeb-toggle">
+    <span class="slider round"></span>
+  </label>
+  <span class="switch-label">Celebrities</span>
+  <div class="board-flex-container">
+    
+    <div class="questions_container flex-side">
+        <%= form_tag board_path(@board), method: :patch do %>
+          <h4>Ask a Question:</h4>
+            <%= label_tag :category %> <br>
+            <select name="question[attribute_type]" id="question_attribute_type">
+                <% @questions_attributes.each do |type| %>
+                  <option value="<%= type %>"><%= type %></option>
+                <% end %>
+                <option selected></option>
+            </select> <br>
 
-<div class="questions_container">
-    <%= form_tag board_path(@board), method: :patch do %>
-        <%= label_tag :attribute_type %>
-        <select name="question[attribute_type]" id="question_attribute_type">
-            <% @questions_attributes.each do |type| %>
-              <option value="<%= type %>"><%= type %></option>
-            <% end %>
-        </select>
+            <%= label_tag :value %> <br>
+            <select name="question[attribute_value]" id="question_attribute_value">
+                <option selected></option>
+                <% @questions_name_values.each do |value| %>
+                  <option value="<%= value %>" class="question_names"><%= value %></option>
+                <% end %>
+                <% @questions_hair_type_values.each do |value| %>
+                  <option value="<%= value %>" class="question_hair_types" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_hair_color_values.each do |value| %>
+                  <option value="<%= value %>" class="question_hair_colors" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_glasses_values.each do |value| %>
+                  <option value="<%= value %>" class="question_glasses" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_hat_values.each do |value| %>
+                  <option value="<%= value %>" class="question_hats" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_gender_values.each do |value| %>
+                  <option value="<%= value %>" class="question_genders" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_eye_color_values.each do |value| %>
+                  <option value="<%= value %>" class="question_eye_colors" style="display:none;"><%= value %></option>
+                <% end %>
+                <% @questions_facial_hair_values.each do |value| %>
+                  <option value="<%= value %>" class="question_facial_hairs" style="display:none;"><%= value %></option>
+                <% end %>
+            </select> <br>
 
-        <select name="question[attribute_value]" id="question_attribute_value">
-            <% @questions_values.each do |value| %>
-              <option value="<%= value %>"><%= value %></option>
-            <% end %>
-        </select>
-        <%= submit_tag "Submit Question" %>
-    <% end %>
+            <%= submit_tag "Submit", class: "btn btn-success" %>
+        <% end %>
+    
+    </div>
+
+    <%= render 'cards/display_cards' %>
+
+
+    <%= render 'questions_asked' %>
+
+    
+
+  </div>
+
+
 </div>

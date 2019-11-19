@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Huyu</title>
+    <title>HuYu</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <nav id='navbar' class="navbar navbar-expand-lg navbar-dark bg-primary no-pad">
-    <%= image_tag 'huyu_logo.png', alt: "Logo" %>
-    <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
-    <% if session[:user_id] %>
-      <%= link_to "Logout", '/logout', method: :delete, class: "navbar-brand"%>   
-    <% end %>
-    
+  <header>
+  <a href="/"><h2 id="huyu-name-logo">HuYu</h2></a>
+  <nav id='navbar' class="no-pad">
+    <div id='links-container'>
+
+      <div class="dropdown">
+      <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+          
+            <%= link_to "Home", root_path, class: "navbar-brand home-link" %>
+            <% if session[:user_id] %>
+              <%= link_to "Edit Profile", edit_user_path(current_user), class: "navbar-brand"%>   
+              <%= link_to "Logout", '/logout', method: :delete, class: "navbar-brand"%>   
+            <% end %>
+        </div>
+      </div>
+
+
+    <a href="/"><%= image_tag 'huyu_logo.png', alt: "Logo" %></a>
+    </div>
   </nav>
   
+  </header>
+  
+  <% if flash[:computer] %>
+  <br> <br>
+    <p class="comp-message"><%= flash[:computer] %></p>   
+  <% end %>
   
   <% if flash[:notice] %>
     <h4><%= flash[:notice] %></h4>   
   <% end %>
 
   <% if flash[:errors] %>
-    <ul class='errors'>
-        <% flash[:errors].each do |error| %>
-          <li><%= error %></li>
-        <% end %> 
-    </ul>  
+    <div class="alert alert-dismissible alert-danger" >
+      <ul class='errors'>
+          <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+          <% end %> 
+      </ul> 
+    </div>
   <% end %>
     <%= yield %>
   </body>

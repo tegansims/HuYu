@@ -1,0 +1,8 @@
+<div class="questions-asked-container flex-side">
+      <% if @questions_asked && !@questions_asked.empty? %>
+        <h4>Questions Asked:</h4>
+        <% @questions_asked.each do |q| %>
+          <h5><%= q %></h5>
+        <% end %>
+      <% end %>
+</div>

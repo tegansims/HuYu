@@ -1,3 +1,21 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-form-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+#login_link {
+    text-align: center;
+}
+
+.form-control-plaintext {
+    width: 50%;
+    margin: auto;
+}
+
+#back-link {
+    margin: auto;
+}

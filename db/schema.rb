@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_144108) do
+ActiveRecord::Schema.define(version: 2019_09_12_081333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,19 +45,22 @@ ActiveRecord::Schema.define(version: 2019_09_09_144108) do
     t.string "hair_color"
     t.string "hair_type"
     t.string "gender"
-    t.boolean "hat"
-    t.boolean "glasses"
+    t.string "hat"
+    t.string "glasses"
     t.string "eye_color"
     t.string "facial_hair"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img_path"
+    t.string "celeb_path"
   end
 
   create_table "games", force: :cascade do |t|
     t.string "game_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "winner"
+    t.integer "loser"
   end
 
   create_table "players", force: :cascade do |t|
@@ -82,6 +85,8 @@ ActiveRecord::Schema.define(version: 2019_09_09_144108) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
   end
 
   add_foreign_key "boardcards", "boards"

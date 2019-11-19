@@ -1,0 +1,14 @@
+<h5>Choose carefully! </h5>
+
+
+<%= @player.user.most_picked_card_name %> is currently your most picked card. <br>
+
+    <% if @player.user.most_picked_card_name == Card.most_picked_card.name %>
+        <%= Card.most_picked_card.name %> is also the most popular choice of card across all players. 
+    <% else %>
+        <%= Card.most_picked_card.name %> is the most popular choice of card across all players. 
+        It has been picked a whopping <%= Card.most_picked_card.times_card_picked %> times!    
+    <% end %>
+    
+
+<br>
